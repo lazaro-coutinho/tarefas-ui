@@ -1,0 +1,16 @@
+<ul class="list-view">
+  <li *ngFor="let tarefa of tarefas" class="list-view-item">
+    <div class="list-view-item-container">
+      <div class="list-view-item-title">
+        {{tarefa.nome}}
+      </div>
+      <div class="list-view-item-description">
+        {{tarefa.descricao}}
+      </div>
+    </div>
+    <div class="list-view-item-actions">
+      <button type="button" class="fa fa-pencil action-btn"></button>
+      <button type="button" class="fa fa-trash action-btn"></button>
+    </div>
+  </li>
+</ul>

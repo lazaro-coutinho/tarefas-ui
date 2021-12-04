@@ -1,0 +1,40 @@
+.list-view {
+  list-style: none;
+  border-top: 1px solid #dfdfdf;
+  margin-top: 10px;
+}
+.list-view-item {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+}
+.list-view-item-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.list-view-item-description {
+  font-size: 18px;
+}
+.list-view-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+}
+.action-btn {
+  border: none;
+  background: #3f51b5;
+  color: #fff;
+  padding: 10px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+.btn {
+  border: none;
+  background: #3f51b5;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
