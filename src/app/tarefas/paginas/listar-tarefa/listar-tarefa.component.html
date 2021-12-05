@@ -16,7 +16,7 @@
     <div class="list-view-item-container"
       [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}">
       <div class="list-view-item-title">
-        {{tarefa.nome}}
+        {{tarefa.nome}} - {{tarefa.status}}
       </div>
       <div class="list-view-item-description">
         {{tarefa.descricao}}
@@ -24,20 +24,26 @@
     </div>
     <div class="list-view-item-actions">
       <button type="button"
-        class="fa fa-check action-btn"
+        class="fa fa-check action-btn tooltip"
         (click)="finalize(tarefa)"
         [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
-        [disabled]="tarefa.status === 'Finalizada'"></button>
+        [disabled]="tarefa.status === 'Finalizada'">
+        <span class="tooltip-text">Finalizar Tarefa</span>
+      </button>
       <button type="button"
-        class="fa fa-pencil action-btn"
+        class="fa fa-pencil action-btn tooltip"
         routerLink="/tarefas/editar/{{tarefa.id}}"
         [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
-        [disabled]="tarefa.status === 'Finalizada'"></button>
+        [disabled]="tarefa.status === 'Finalizada'">
+        <span class="tooltip-text">Editar Tarefa</span>
+      </button>
       <button type="button"
-        class="fa fa-trash action-btn"
-        (click)="remove(tarefa)"
+        class="fa fa-close action-btn tooltip"
+        (click)="arquivar(tarefa)"
         [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
-        [disabled]="tarefa.status === 'Finalizada'"></button>
+        [disabled]="tarefa.status === 'Finalizada'">
+        <span class="tooltip-text">Arquivar Tarefa</span>
+      </button>
     </div>
   </li>
 </ul>

@@ -46,4 +46,9 @@ export class TarefaService {
     return this.httpClient.put<Tarefa>(url, tarefa);
   }
 
+  arquivar(tarefa: Tarefa): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas/${tarefa.id}/arquivar`;
+    return this.httpClient.put<Tarefa>(url, tarefa);
+  }
+
 }
