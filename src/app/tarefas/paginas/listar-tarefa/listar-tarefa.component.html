@@ -3,7 +3,13 @@
     <i class="fa fa-plus"></i>
     Nova
   </button>
-  <input (keypress)="findByName($event)" class="field-search">
+  <div class="input-group">
+    <input class="field-search"
+      (keyup)="search($event)"
+      autofocus>
+    <i class="fa fa-close clean-search-btn"
+      (click)="cleanSearch($event)"></i>
+  </div>
 </div>
 <ul class="list-view">
   <li *ngFor="let tarefa of tarefas" class="list-view-item">

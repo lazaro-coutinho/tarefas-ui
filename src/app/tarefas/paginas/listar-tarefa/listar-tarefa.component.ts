@@ -48,15 +48,45 @@ export class ListarTarefaComponent {
       );
   }
 
-  findByName(e: any) {
+  search(e: any) {
+    const nome = e.target.value;
+
+    if (nome !== '') {
+      this.showSearchBtn();
+    } else {
+      this.hideSearchBtn();
+    }
+
     if (e.keyCode === 13) {
-      const nome = e.target.value;
       this.tarefaService.findByName(nome)
         .subscribe(
           (tarefas: Tarefa[]) => this.tarefas = tarefas,
           (error) => alert(error.message)
         );
     }
+  }
+
+  cleanSearch(e: any) {
+    this.cleanInputSearch(e);
+    this.findAll();
+  }
+
+  cleanInputSearch(e: any) {
+    const elementIcon = e.target.parentElement;
+    const elementInputSearch = elementIcon.children[0];
+    elementInputSearch.value = '';
+    elementInputSearch.focus();
+    this.hideSearchBtn();
+  }
+
+  hideSearchBtn() {
+    const cleanSearchBtn = document.querySelector('.clean-search-btn');
+    cleanSearchBtn?.classList.remove('visible');
+  }
+
+  showSearchBtn() {
+    const cleanSearchBtn = document.querySelector('.clean-search-btn');
+    cleanSearchBtn?.classList.add('visible');
   }
 
 }

@@ -50,11 +50,37 @@
   display: flex;
   justify-content: space-between;
 }
-.field-search {
+.input-group {
+  position: relative;
+  padding: 0 20px 0 0;
   width: calc(100% - 80px);
-  margin-left: 2px;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #dfdfdf;
+  background: #fff;
+  margin-left: 2px;
+}
+.field-search {
+  width: 100%;
+  padding: 5px;
   outline: 0;
   font-size: 18px;
+  border: none;
+}
+.clean-search-btn {
+  position: absolute;
+  width: 20px;
+  height: calc(100% - 2px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  color: #dfdfdf;
+  cursor: pointer;
+  display: none;
+}
+.visible {
+  display: flex;
 }
