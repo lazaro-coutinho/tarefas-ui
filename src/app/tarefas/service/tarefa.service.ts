@@ -16,6 +16,16 @@ export class TarefaService {
     return this.httpClient.post<Tarefa>(url, tarefa);
   }
 
+  update(tarefa: Tarefa): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas/${tarefa.id}`;
+    return this.httpClient.put<Tarefa>(url, tarefa);
+  }
+
+  findById(id: number): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas/${id}`;
+    return this.httpClient.get<Tarefa>(url);
+  }
+
   findAll(): Observable<Tarefa[]> {
     const url = `${environment.apiUrl}/tarefas`;
     return this.httpClient.get<Tarefa[]>(url);
