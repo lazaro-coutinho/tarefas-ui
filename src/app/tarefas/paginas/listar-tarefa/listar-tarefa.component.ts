@@ -23,4 +23,18 @@ export class ListarTarefaComponent {
       );
   }
 
+  remove(tarefa: Tarefa) {
+    const remover = confirm('Tem certeza de que deseja remover esta Tarefa?');
+    if (remover) {
+      this.tarefaService.remove(tarefa)
+        .subscribe(
+          () => {
+            this.findAll();
+            alert('Tarefa removida com sucesso');
+          },
+          (error) => alert(error.message)
+        );
+    }
+  }
+
 }

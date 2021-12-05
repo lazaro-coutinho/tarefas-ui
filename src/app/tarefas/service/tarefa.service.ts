@@ -21,6 +21,11 @@ export class TarefaService {
     return this.httpClient.put<Tarefa>(url, tarefa);
   }
 
+  remove(tarefa: Tarefa): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas/${tarefa.id}`;
+    return this.httpClient.delete<Tarefa>(url);
+  }
+
   findById(id: number): Observable<Tarefa> {
     const url = `${environment.apiUrl}/tarefas/${id}`;
     return this.httpClient.get<Tarefa>(url);
