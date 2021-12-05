@@ -38,3 +38,10 @@
   padding: 10px;
   cursor: pointer;
 }
+.tarefa-finalizada {
+  opacity: 0.5;
+}
+.tarefa-finalizada .list-view-item-title,
+.tarefa-finalizada .list-view-item-description {
+  text-decoration: line-through;
+}

@@ -36,4 +36,9 @@ export class TarefaService {
     return this.httpClient.get<Tarefa[]>(url);
   }
 
+  finalize(tarefa: Tarefa): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas/${tarefa.id}/finalizar`;
+    return this.httpClient.put<Tarefa>(url, tarefa);
+  }
+
 }

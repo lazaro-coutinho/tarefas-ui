@@ -6,7 +6,8 @@
 </div>
 <ul class="list-view">
   <li *ngFor="let tarefa of tarefas" class="list-view-item">
-    <div class="list-view-item-container">
+    <div class="list-view-item-container"
+      [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}">
       <div class="list-view-item-title">
         {{tarefa.nome}}
       </div>
@@ -15,10 +16,21 @@
       </div>
     </div>
     <div class="list-view-item-actions">
-      <button type="button" class="fa fa-pencil action-btn"
-        routerLink="/tarefas/editar/{{tarefa.id}}"></button>
-      <button type="button" class="fa fa-trash action-btn"
-        (click)="remove(tarefa)"></button>
+      <button type="button"
+        class="fa fa-check action-btn"
+        (click)="finalize(tarefa)"
+        [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
+        [disabled]="tarefa.status === 'Finalizada'"></button>
+      <button type="button"
+        class="fa fa-pencil action-btn"
+        routerLink="/tarefas/editar/{{tarefa.id}}"
+        [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
+        [disabled]="tarefa.status === 'Finalizada'"></button>
+      <button type="button"
+        class="fa fa-trash action-btn"
+        (click)="remove(tarefa)"
+        [ngClass]="{'tarefa-finalizada' : tarefa.status === 'Finalizada'}"
+        [disabled]="tarefa.status === 'Finalizada'"></button>
     </div>
   </li>
 </ul>

@@ -37,4 +37,15 @@ export class ListarTarefaComponent {
     }
   }
 
+  finalize(tarefa: Tarefa) {
+    this.tarefaService.finalize(tarefa)
+      .subscribe(
+        () => {
+          this.findAll();
+          alert('Tarefa finalizada com sucesso');
+        },
+        (error) => alert(error.message)
+      );
+  }
+
 }
