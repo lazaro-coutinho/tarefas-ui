@@ -31,6 +31,11 @@ export class TarefaService {
     return this.httpClient.get<Tarefa>(url);
   }
 
+  findByName(nome: string): Observable<Tarefa[]> {
+    const url = `${environment.apiUrl}/tarefas?nome=${nome}`;
+    return this.httpClient.get<Tarefa[]>(url);
+  }
+
   findAll(): Observable<Tarefa[]> {
     const url = `${environment.apiUrl}/tarefas`;
     return this.httpClient.get<Tarefa[]>(url);

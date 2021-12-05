@@ -37,6 +37,7 @@
   color: #fff;
   padding: 10px;
   cursor: pointer;
+  width: 80px;
 }
 .tarefa-finalizada {
   opacity: 0.5;
@@ -44,4 +45,16 @@
 .tarefa-finalizada .list-view-item-title,
 .tarefa-finalizada .list-view-item-description {
   text-decoration: line-through;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+.field-search {
+  width: calc(100% - 80px);
+  margin-left: 2px;
+  padding: 5px;
+  border: 1px solid #dfdfdf;
+  outline: 0;
+  font-size: 18px;
 }

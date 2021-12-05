@@ -48,4 +48,15 @@ export class ListarTarefaComponent {
       );
   }
 
+  findByName(e: any) {
+    if (e.keyCode === 13) {
+      const nome = e.target.value;
+      this.tarefaService.findByName(nome)
+        .subscribe(
+          (tarefas: Tarefa[]) => this.tarefas = tarefas,
+          (error) => alert(error.message)
+        );
+    }
+  }
+
 }
