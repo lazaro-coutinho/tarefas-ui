@@ -11,8 +11,14 @@ export class TarefaService {
 
   constructor(private httpClient: HttpClient) { }
 
+  save(tarefa: Tarefa): Observable<Tarefa> {
+    const url = `${environment.apiUrl}/tarefas`;
+    return this.httpClient.post<Tarefa>(url, tarefa);
+  }
+
   findAll(): Observable<Tarefa[]> {
     const url = `${environment.apiUrl}/tarefas`;
     return this.httpClient.get<Tarefa[]>(url);
   }
+
 }

@@ -1,0 +1,22 @@
+<form class="form" #form="ngForm" (ngSubmit)="onSubmit()">
+  <label for="nome">Nome</label>
+  <input id="nome"
+        type="text"
+        class="field"
+        #nome="ngModel"
+        [(ngModel)]="tarefa.nome"
+        name="nome">
+  <label for="descricao">Descrição</label>
+  <textarea id="descricao"
+        rows="10"
+        class="field"
+        #descricao="ngModel"
+        [(ngModel)]="tarefa.descricao"
+        name="descricao"></textarea>
+  <div class="btn-container">
+    <button class="btn">
+      <i class="fa fa-save"></i>
+      Salvar
+    </button>
+  </div>
+</form>
