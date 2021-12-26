@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "tarefas-ui"
+  "defaultProject": "tarefas-ui",
+  "cli": {
+    "analytics": "0b921e9e-217b-4a68-8e4c-cb0157723db2"
+  }
 }
