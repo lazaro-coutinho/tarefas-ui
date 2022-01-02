@@ -1,0 +1,8 @@
+<h1>Entrar</h1>
+<form class="form" (ngSubmit)="entrar()" #form="ngForm">
+    <label for="login">Login</label>
+    <input id="login" type="text" class="field" #login="ngModel" [(ngModel)]="usuario.login" name="login">
+    <label for="senha">Senha</label>
+    <input id="senha" type="password" class="field" #senha="ngModel" [(ngModel)]="usuario.senha" name="senha">
+    <button class="btn">Entrar</button>
+</form>
