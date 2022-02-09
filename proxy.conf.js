@@ -1,6 +1,6 @@
 const PROXY_CONFIG = [{
     context: ['/api'],
-    target: 'https://lvc-tarefas-api.herokuapp.com/',
+    target: 'http://localhost:8080/',
     secure: false,
     logLevel: 'debug'
 }];
