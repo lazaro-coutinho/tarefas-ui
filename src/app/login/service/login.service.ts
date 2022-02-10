@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../modelo/usuario';
 import jwtDecode from 'jwt-decode';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   entrar(usuario: Usuario): Observable<any> {
-    const url = 'api/login';
+    const url = `${environment.apiUrl}/login`;
     return this.httpClient.post<any>(url, usuario);
   }
 
