@@ -20,7 +20,10 @@ export class LoginInterceptor implements HttpInterceptor {
             request = req.clone({
                 headers: req.headers
                     .set('Authorization', `Bearer ${token}`)
+                    .set('Content-Type', 'application/json')
                     .set('Access-Control-Allow-Origin', '*')
+                    .set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+                    .set('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
             });
         }
 
